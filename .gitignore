@@ -1,0 +1,14 @@
+env/
+__pycache__/
+*.pyc
+.DS_Store
+dataset/
+*.jpg
+*.png
+*.jpeg
+!assets/*.png
+!assets/*.jpg
+!assets/*.jpeg
+stamp.py
+output_composition.py
+CLIP/
