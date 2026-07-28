@@ -61,7 +61,7 @@ effectiveness can be compared directly:
 | **LaMa** | Neural | Reconstructs plausible background with a trained model |
  
 
-![Recovery method comparison](assets/methods_comparison.png)
+![Solid Mask](assets/solid_fill_comparison.png) | ![OpenCV Inpaint](assets/opencv_infill_comparison.png) | ![LaMa Infill](assets/comparison.png)
  
 ---
  
