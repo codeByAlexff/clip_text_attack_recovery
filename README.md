@@ -59,9 +59,8 @@ effectiveness can be compared directly:
 | **Solid mask** | Crude baseline | Paints a solid box over the text |
 | **OpenCV inpaint** | Classical CV | Diffuses surrounding pixels inward (`INPAINT_TELEA`) |
 | **LaMa** | Neural | Reconstructs plausible background with a trained model |
- 
-
-![Solid Mask](assets/solid_fill_comparison.png) | ![OpenCV Inpaint](assets/opencv_infill_comparison.png) | ![LaMa Infill](assets/comparison.png)
+|----------|-------------------|-----------|
+| ![Solid Mask](assets/solid_fill_comparison.png) | ![OpenCV Inpaint](assets/opencv_infill_comparison.png) | ![LaMa Infill](assets/comparison.png) |
  
 ---
  
