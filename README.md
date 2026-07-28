@@ -50,16 +50,18 @@ step masks out.
 ---
  
 ## Recovery Methods
- 
+
 The project implements three strategies of increasing sophistication, so their
 effectiveness can be compared directly:
- 
+
 | Method | Type | How it fills the region |
 |--------|------|-------------------------|
 | **Solid mask** | Crude baseline | Paints a solid box over the text |
 | **OpenCV inpaint** | Classical CV | Diffuses surrounding pixels inward (`INPAINT_TELEA`) |
 | **LaMa** | Neural | Reconstructs plausible background with a trained model |
-|----------|-------------------|-----------|
+
+| Solid Mask | OpenCV Inpaint | LaMa Infill |
+|:----------:|:--------------:|:-----------:|
 | ![Solid Mask](assets/solid_fill_comparison.png) | ![OpenCV Inpaint](assets/opencv_infill_comparison.png) | ![LaMa Infill](assets/comparison.png) |
  
 ---
