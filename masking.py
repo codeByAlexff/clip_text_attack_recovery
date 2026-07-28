@@ -5,6 +5,21 @@ from simple_lama_inpainting import SimpleLama
 
 simple_lama = SimpleLama()
 
+def solid_mask(image, coords):
+    image = np.array(image).copy()
+    for top_left, bottom_right in coords:
+        cv2.rectangle(image, top_left, bottom_right, (0, 0, 0), -1)
+    return Image.fromarray(image)
+
+def cv_inpaint(image, coords):
+    image = np.array(image).copy()
+    mask = np.zeros(image.shape[:2], dtype=np.uint8)
+    for top_left, bottom_right in coords:
+        cv2.rectangle(mask, top_left, bottom_right, 255, -1)
+    result = cv2.inpaint(image, mask, 3, cv2.INPAINT_TELEA)
+    return Image.fromarray(result)
+
+
 def infill(image, coords):
     image = np.array(image).copy()
     mask = np.zeros(image.shape[:2], dtype=np.uint8)
