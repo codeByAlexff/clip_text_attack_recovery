@@ -13,7 +13,9 @@ removal method restores the correct prediction.
 ## The Attack in One Picture
  
 
-![Attack and recovery example](assets/comparison.png)
+| Typographic Attack | OCR Detection | LaMa Masking | Correct Prediction |
+|----------|-------------------|-----------|-----------|
+| ![attacked](assets/input_image.jpg) | ![ocr](assets/ocr_result.jpg) | ![cleaned](assets/cleaned_image.jpg) | ![comparison](assets/comparison.png)
  
 The stamped word hijacks CLIP's prediction. Once the text is detected and
 removed, classification recovers.
