@@ -68,7 +68,7 @@ effectiveness can be compared directly:
  
 ## Results
 
-![Sample attacked images](assets/attack_and_success_recovery_rates.png)
+![Sample attacked images](assets/attack_success_and_recovery_rates.png)
  
 
 **Total Images:** 28
