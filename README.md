@@ -99,7 +99,7 @@ label, the attack word, and file paths for every image, providing ground truth
 for evaluation.
  
 
-![Sample attacked images](dataset/output/predictions.csv)
+[Full predictions](dataset/output/predictions.csv)
  
 ---
  
