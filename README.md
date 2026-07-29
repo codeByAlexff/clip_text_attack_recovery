@@ -67,16 +67,21 @@ effectiveness can be compared directly:
 ---
  
 ## Results
+
+![Sample attacked images](assets/attack_and_success_recovery_rates.png)
  
 
-| Recovery Method | Attack Success Rate | Recovery Rate |
-|-----------------|--------------------|--------------:|
-| Solid mask      | XX%                | XX%           |
-| OpenCV inpaint  | XX%                | XX%           |
-| LaMa            | XX%                | XX%           |
- 
-*Evaluated on a dataset of N images across M classes, each stamped with a
-misleading label from the class set.*
+**Total Images:** 28
+**Successful Attacks:** 25
+**Attack Success Rate (ASR):** 89.29%
+
+| Recovery Method | Recovery Rate |
+|-----------------|--------------:|
+| Solid mask      | 100%          |
+| OpenCV inpaint  | 100%          |
+| LaMa            | 100%          |
+
+> Recovery rate is measured over the successfully-attacked subset (M images) — i.e. of the attacks that fooled CLIP, the percentage each method restored to the correct label.
  
 **Key finding:** _<one or two sentences on what you actually observed — e.g.
 "Neural inpainting recovered the true label more reliably than classical
@@ -94,7 +99,7 @@ label, the attack word, and file paths for every image, providing ground truth
 for evaluation.
  
 
-![Sample attacked images](assets/dataset_samples.png)
+![Sample attacked images](dataset/output/predictions.csv)
  
 ---
  
@@ -106,24 +111,7 @@ for evaluation.
 - **LaMa** (`simple-lama-inpainting`) — neural inpainting
 - **PyTorch**, **Pillow**, **NumPy**
 ---
- 
-## Project Structure
- 
-```
-├── classifier.py      # CLIP loading + classification
-├── ocr.py             # EasyOCR text detection + coordinate extraction
-├── masking.py         # solid-box removal
-├── infill.py          # OpenCV inpainting removal
-├── ai_infill.py       # LaMa neural inpainting removal
-├── pipeline.py        # orchestrates classify → detect → remove → re-classify
-├── stamp.py           # generates the attacked dataset + manifest
-├── visualize.py       # builds the comparison output cards
-├── test.py            # runs the pipeline on a single image
-└── assets/            # result images used in this README
-```
- 
----
- 
+
 ## Setup
  
 ```bash
@@ -135,17 +123,11 @@ cd clip-typographic-attack
 python -m venv env
 source env/bin/activate        # macOS/Linux
 # .\env\Scripts\activate       # Windows PowerShell
- 
-# Install dependencies
-pip install -r requirements.txt
- 
+
 # CLIP (installed from source)
 pip install git+https://github.com/openai/CLIP.git
 ```
- 
-> **GPU note:** for NVIDIA GPUs, install the CUDA build of PyTorch matching your
-> card before the rest (e.g. `cu128` for RTX 50-series). On Apple Silicon and
-> CPU-only machines the pipeline runs as-is, just slower.
+ > CPU-only machines the pipeline runs as-is.
  
 ---
  
@@ -159,13 +141,7 @@ python test.py
  
 This classifies the image, detects and removes the stamped text, re-classifies,
 and writes the comparison card plus the OCR detection image.
- 
-Generate the attacked dataset:
- 
-```bash
-python stamp.py
-```
- 
+
 ---
  
 ## Why This Matters
