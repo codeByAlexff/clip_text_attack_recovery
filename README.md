@@ -83,7 +83,7 @@ effectiveness can be compared directly:
 
 > Recovery rate is measured over the successfully-attacked subset (M images) — i.e. of the attacks that fooled CLIP, the percentage each method restored to the correct label.
  
-**Key finding:** _<"All three performed similarly when the text sat over simple backgrounds. The most notable difference was the positioning of the text when placed on top of an extremely colorful or detailed object">_
+**Key finding:** All three recovery methods performed similarly when the text sat over simple backgrounds. The most notable difference was the prediction that CLIP would give when the positioning of the text was placed on top of an extremely colorful or detailed object. In these instances CLIP would accurately predict the true label of the object in the image."
  
 ---
  
