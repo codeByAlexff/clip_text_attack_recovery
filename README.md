@@ -83,10 +83,7 @@ effectiveness can be compared directly:
 
 > Recovery rate is measured over the successfully-attacked subset (M images) — i.e. of the attacks that fooled CLIP, the percentage each method restored to the correct label.
  
-**Key finding:** _<one or two sentences on what you actually observed — e.g.
-"Neural inpainting recovered the true label more reliably than classical
-methods on visually complex images, but all three performed similarly when the
-text sat over simple backgrounds.">_
+**Key finding:** _<"All three performed similarly when the text sat over simple backgrounds. The most notable difference was the positioning of the text when placed on top of an extremely colorful or detailed object">_
  
 ---
  
