@@ -1,8 +1,7 @@
 import classifier
 import ocr
 import masking
-
-labels = ["dog", "cat", "bird"]
+from labels import labels
 
 def run(image):
     original_pred = classifier.classify_image(image, labels)
@@ -10,8 +9,7 @@ def run(image):
     ocr_result = ocr.detect_text(image)
     coords = ocr.get_coords(ocr_result)
 
-    #cleaned_image = masking.infill(image, coords)
-    cleaned_image = masking.cv_inpaint(image, coords)
+    cleaned_image = masking.infill(image, coords)
 
     cleaned_pred = classifier.classify_image(cleaned_image, labels)
 
